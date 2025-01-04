@@ -19,4 +19,4 @@ def product_detail(product_id):
     return render_template('product.html', product=product)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=4000)
