@@ -3,20 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Store</title>
+    <title>Online Store</title>
     <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
-    <h1>Welcome to the Store</h1>
-    <ul>
-        {% for product in products %}
-        <li>
-            <h2>{{ product.name }}</h2>
-            <p>Price: ${{ product.price }}</p>
-            <a href="/product/{{ product.id }}">View Details</a>
-        </li>
-        {% endfor %}
-    </ul>
+    <header>
+        <h1>Welcome to the Online Store</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+        </nav>
+    </header>
+    <main>
+        <div class="product-grid">
+            {% for product in products %}
+            <div class="product-card">
+                <img src="/static/images/{{ product.image }}" alt="{{ product.name }}">
+                <h2>{{ product.name }}</h2>
+                <p>${{ product.price }}</p>
+                <a href="/product/{{ product.id }}">View Details</a>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Online Store</p>
+    </footer>
 </body>
 </html>
 
